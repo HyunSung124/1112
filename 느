@@ -1,0 +1,109 @@
+#색종이
+# board = []
+# for i in range(100):
+#     board.append([0]*100)
+# n = int(input())
+# for _ in range(n):
+#     x, y = input().split()
+#     x = int(x)
+#     y = int(y)
+#
+#     for i in range(x, x+10):
+#         for j in range(y, y+10):
+#             board[i][j] = 1
+# answer = 0
+# for b in board:
+#     answer += b.count(1)
+# print(answer)
+
+
+#복습
+# def sum_nums(nums):
+#     answer = 0
+#     for i in nums:
+#         answer += i
+#     return answer
+# nums = []
+# n = int(input())
+# for _ in range(n):
+#     x = int(input())
+#     nums.append(x)
+# print(sum_nums(nums))
+
+
+# def sum_nums(*nums):
+#     answer = 0
+#     for i in nums:
+#         answer += i
+#     return answer
+#
+# print(sum_nums(1,2,3,4,5,6,7,8,9,10))
+
+
+# def print_Hi_or_value(value = "Hi"):
+#     print(value)
+# a = [1,2,3,4,5]
+# print_Hi_or_value(a)
+
+
+#pop, replace, append, extend
+
+#pop() : 리스트에서 값을 추출 해주는 함수
+# a = [5,6,7,8]
+# a.pop(2)
+# print(a) #=> [5,6,8]
+
+
+# a = [5,6,7,8]
+# def my_pop(_list, index = -1):
+#     result = _list[index]
+#     del _list[index]
+#     return _list[index], _list
+#
+#
+# #pop과 동일한 동작을 하는 함수 my_pop을 구현하시오 단, 실행 방식은 my_pop(리스트, 인덱스번호)이다.
+# #인덱스 번호에 값을 넣지 않을 경우 자동으로 마지막 원소 값을 추출하면 된다.
+# print(my_pop(a,2))  # => 7, [5,6,8]
+# # print(my_pop(a))    # => 8, [5,6,7]
+
+
+# def my_replace(string, old, new, count = 0):
+#     if count == 0:
+#         count = len(string)
+#     new_string = ""
+#     for i in string:
+#         if count and i == old:
+#             new_string += new
+#             count -= 1
+#         else:
+#             new_string += i
+#
+#     return new_string
+# ## a = "Python"
+# ## print(a.replace('P', 'B'))
+# ## b = 'BBBBBBB'
+# ## print(b.replace('B', 'A', 3))
+# c = 'CCCCCC'
+# print(my_replace(c, 'C', "A"))
+# print(my_replace(c, 'C', "A", 3))
+
+
+
+#소수 만들기
+def isPrime(n):
+    #소수일 경우 True 아닐경우 False를 리턴한다.
+    if n <= 1: return False
+    for i in range(2,n):
+        if n % i == 0:
+            return False
+    return True
+def solution(nums):
+    cnt = 0
+    #num에서 3개의 수들을 더해준다.
+    #더한 숫자가 소수인지를 판별한다. 함수(isPrime())로 만들어서 확인한다.
+    #소수일 경우 정답의 개수를 증가 시켜준다.
+    if isPrime(x1+x2+x3):
+        cnt += 1
+    return cnt
+nums = [1,2,3,4]
+print(solution(nums))
